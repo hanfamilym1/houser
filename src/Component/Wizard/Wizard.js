@@ -24,7 +24,7 @@ class Wizard extends Component {
                 <br />
                 <Link to='/'> <button onClick={()=>resetState()}><h4>Cancel</h4></button> </Link>
                 <Switch>
-                    <Route exact path='/wizard/step1' component={StepOne} />
+                    <Route exact path={this.props.match.path+'/step1'} component={StepOne} />
                     <Route exact path='/wizard/step2' component={StepTwo} />
                     <Route exact path='/wizard/step3' component={StepThree} />
                 </Switch>

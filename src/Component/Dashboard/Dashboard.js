@@ -11,9 +11,13 @@ class Dashboard extends Component {
         }
     }
     componentDidMount(){
+        this.getHouses()
+    }
+
+    getHouses(){
         axios.get('/api/houses').then(res=>this.setState({
             houses: res.data
-        }))
+        })) 
     }
     render(){
         console.log(this.state.houses)

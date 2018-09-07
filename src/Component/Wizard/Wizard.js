@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 class Wizard extends Component{
     constructor(props){
@@ -11,6 +12,7 @@ class Wizard extends Component{
             state: '',
             zipcode: 0
         }
+        this.createHouse = this.createHouse.bind(this)
     }
 
     handleName(val){
@@ -41,6 +43,13 @@ class Wizard extends Component{
             zipcode: val
         })
     }
+
+    createHouse(){
+        let {name, address, city, state, zipcode } = this.state
+        axios.post('/api/house', {name, address, city, state,zipcode}).then (res=>
+        res.data)
+    }
+
     render(){
         console.log(this.state.name)
         console.log(this.state.address)
@@ -64,7 +73,7 @@ class Wizard extends Component{
             <input type="number" value={this.state.zipcode} onChange={(e)=>{this.handleZip(e.target.value)}}/>
             <br/>
             <br/>
-            <button><h4>Complete</h4></button>
+            <Link to='/'><button onClick={this.createHouse}><h4>Complete</h4></button></Link>
         </div>
         )
     }

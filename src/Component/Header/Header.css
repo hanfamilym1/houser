@@ -1,0 +1,12 @@
+.header {
+    background-color: #519872;
+    width: 100vw;
+    height: 15vh;
+}
+
+.houser{
+    color: white;
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+}

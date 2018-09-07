@@ -9,9 +9,9 @@ module.exports={
         const db = req.app.get('db')
         // console.log(req.body)
         let house = req.body
-        let {id, name, address, city, state, zipcode } = house
-        // console.log(name, address, city, state, zipcode)
-        db.insert_house(name, address, city, state, zipcode).then(house=>res.status(200).send(house))
+        let {id, name, address, city, states, zipcode, image, monthly, rent} = house
+        // console.log(name, address, city, states, zipcode)
+        db.insert_house(name, address, city, zipcode, image, monthly, rent, states).then(house=>res.status(200).send(house))
     }, 
     delete: (req,res)=>{
         const db = req.app.get('db')

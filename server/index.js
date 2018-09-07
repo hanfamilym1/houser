@@ -6,6 +6,7 @@ const massive = require('massive')
 const ctrl = require('./controller')
 
 app.use(bodyParser.json())
+app.use( express.static( __dirname + '/../public/build' ) );
 
 const port = 4000
 

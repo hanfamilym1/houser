@@ -1,0 +1,33 @@
+.dashboard {
+    background-color: #AFD4C0;
+    width: 100vw;
+    height: 85vh;
+    
+}
+
+.inner {
+    background-color: #E5F4EC;
+    width: 55vw;
+    height: 85vh;
+    margin-left: 200px;
+}
+.dbheader1 {
+    width: 55vw;
+    height: 14vh;
+}
+.dbheader {
+    color: #3B5249;
+    font-size: 35px;
+    position: relative;
+    padding: 30px;
+    width: 50px;
+    float: left;
+}
+
+.newproperty {
+    background-color: #8AEA92;
+    width: 150px;
+    height: 40px;
+    margin-left: 200px;
+    margin-top:25px;
+}

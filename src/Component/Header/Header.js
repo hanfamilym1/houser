@@ -1,7 +1,10 @@
 import React from 'react'
+import './Header.css'
 
 export default function Header(){
     return(
-        <div>(Picture of a House) HOUSER</div>
+        <div class='header'>
+        <h2 class='houser'>HOUSER</h2>
+        </div>
     )
 }

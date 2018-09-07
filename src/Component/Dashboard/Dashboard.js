@@ -9,6 +9,8 @@ class Dashboard extends Component {
         this.state={
             houses: []
         }
+        this.deleteHouse = this.deleteHouse.bind(this)
+        this.getHouses = this.getHouses.bind(this)
     }
     componentDidMount(){
         this.getHouses()
@@ -19,12 +21,23 @@ class Dashboard extends Component {
             houses: res.data
         })) 
     }
+    deleteHouse(id){
+        // console.log(id)
+        axios.delete(`/api/house/${id}`).then(res=>this.setState({
+            houses: res.data
+        }))
+        this.getHouses()
+     
+    }
     render(){
         console.log(this.state.houses)
         let listOfHouses = this.state.houses.map(house=>{
-            let {name, address, city, state, zipcode} = house
+            let {id, name, address, city, state, zipcode} = house
             return (
-                <House name={name} address={address} city={city} state={state} zipcode={zipcode}/>
+                <div>
+                <House houses={this.state.houses} deleteHouse={this.deleteHouse} id={id} name={name} address={address} city={city} state={state} zipcode={zipcode}/>
+                
+                </div>
             )
         })
         return(
